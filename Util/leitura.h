@@ -12,7 +12,6 @@ void ler_str(char entrada[]){
 
 	scanf("%[^\n]s", entrada);
 	getchar();
-
 }
 
 
@@ -20,7 +19,6 @@ void ler_int(int *numero){
 
 	scanf("%d", numero);
 	getchar();
-
 }
 
 #endif /* LEITURA_H_ */

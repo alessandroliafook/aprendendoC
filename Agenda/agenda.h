@@ -8,26 +8,23 @@
 #ifndef AGENDA_AGENDA_H_
 #define AGENDA_AGENDA_H_
 
+#include <string.h>
+#include "../Pessoa/pessoa.h"
+
 struct Pessoa agenda[100];
-
-int i;
-int n_cadastros;
 int total_cadastros = 0;
+int i;
 
-void cadastra_pessoa(){
+void cadastra_pessoa(char nome[], int idade){
 
-	printf("Informe o numero de cadastros: ");
-	ler_int(&n_cadastros);
+	if(total_cadastros < 100){
 
-	total_cadastros = total_cadastros + n_cadastros;
+		strcpy(agenda[total_cadastros].nome, nome);
+		agenda[total_cadastros].idade = idade;
+		total_cadastros = total_cadastros + 1;
 
-	for(i = 0; i < n_cadastros; i++){
-
-		printf("Informe o nome da pessoa: ");
-		ler_str(agenda[i].nome);
-
-		printf("Informe a idade da pessoa: ");
-		ler_int(&agenda[i].idade);
+	} else {
+		printf("Limite de memoria ultrapassado.");
 	}
 }
 
@@ -35,6 +32,7 @@ void cadastra_pessoa(){
 void imprime_cadastros(){
 
 	for(i = 0; i < total_cadastros; i++){
+		printf("%d) ", i + 1);
 		imprime_pessoa(agenda[i]);
 	}
 }

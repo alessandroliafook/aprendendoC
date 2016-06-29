@@ -14,19 +14,6 @@ struct Pessoa{
 	int idade;
 };
 
-int compara_pessoa(struct Pessoa pessoa, struct Pessoa pessoa2){
-
-	if(pessoa.idade > pessoa2.idade){
-		return 1;
-
-	} else if (pessoa.idade == pessoa2.idade){
-		return 0;
-
-	} else {
-		return -1;
-	}
-}
-
 void imprime_pessoa(struct Pessoa pessoa){
 
 	printf("%s, %d\n", pessoa.nome, pessoa.idade);
