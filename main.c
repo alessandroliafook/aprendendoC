@@ -16,7 +16,7 @@ int main() {
 				"opcao: ");
 
 		ler_int(&escolha);
-
+		printf("\n");
 
 		if (escolha == 1) {
 			char nome[100];
